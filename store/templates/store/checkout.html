@@ -3,6 +3,73 @@
 
 {% block content %}
 
-    <h3>Checkout Page</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="box-element" id="form-wrapper">
+                    <form action="" id="form">
+                        <div id="user-info">
+                            <div class="form-field">
+                                <input type="text" required class="form-control" name="name" placeholder="Name..">
+                            </div>
+                            <div class="form-field">
+                                <input type="text" required class="form-control" name="email" placeholder="Email..">
+                            </div>
+                        </div>
+    
+                        <div id="shipping-info">
+                            <hr>
+                            <p>Shipping Information:</p>
+                            <hr>
+                            <div class="form-field">
+                                <input type="text"  class="form-control" name="address" placeholder="Address..">
+                            </div>
+                            <div class="form-field">
+                                <input type="text"  class="form-control" name="city" placeholder="City..">
+                            </div>
+                            <div class="form-field">
+                                <input type="text"  class="form-control" name="state" placeholder="State..">
+                            </div>
+                            <div class="form-field">
+                                <input type="text"  class="form-control" name="zipcode" placeholder="Zip Code..">
+                            </div>
+                            <div class="form-field">
+                                <input type="text"  class="form-control" name="country" placeholder="Country..">
+                            </div>
+    
+                        </div>
+                        <hr>
+                        <input id="form-button" class="btn btn-success btn-block" type="submit" value="Continue">
+                    </form>
+                </div>
+                <br>
+
+                <div class="box-element hidden" id="payment-info">
+                    <small>Paypal Options</small>
+
+                </div>
+            </div>
+    
+            <div class="col-lg-6">
+                <div class="box-element">
+                    <a class="btn btn-outline-dark" href="{% url 'cart' %}"> &#x2190; Back to Cart </a>
+                    <hr>
+                        <h3>Order Summary:</h3>
+                    <hr>
+                    <div class="cart-row">
+                        <div style="flex:2"><img class="row-image" src="{% static 'images/placeholder.png' %}" alt=""></div>
+                        <div style="flex:2">Product 1</div>
+                        <div style="flex:1">$20.00</div>
+                        <div style="flex:1">x2</div>
+                    </div>
+
+                    <h5>Items: 2</h5>
+                    <h5>Total: $40</h5>
+    
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 {% endblock %}
