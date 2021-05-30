@@ -37,6 +37,39 @@
 
 		var csrftoken = getToken('csrftoken');
 
+
+		function getCookie(name){
+			//split cookie string and get all individuals name=value pairs in an array
+			var cookieArr = document.cookie.split(";");
+
+			//loop through the cookie elements
+			for (var i=0; i< cookieArr.length; i++)
+			{
+				var cookiePair = cookieArr[i].split("=");
+
+				/* removing whitespace at the beginning of the cookie name and compare it with the given sting */
+				if (name == cookiePair[0].trim())
+				{
+					//Decode the cookie value and return
+					return decodeURIComponent(cookiePair[1]);
+				}
+			}
+
+			// return null if not found
+			return null;
+		}
+
+		var cart = JSON.parse(getCookie('cart'))
+		if (cart == undefined)
+		{
+			cart = {}
+			console.log('Cart was created!')
+			document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/"
+		}
+
+		var cart = JSON.parse(getCookie('cart'))
+		console.log('Cart:', cart)
+
 	</script>
 
 </head>
