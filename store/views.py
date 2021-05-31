@@ -3,6 +3,7 @@ from django.http import JsonResponse
 import json
 import datetime
 from . models import *
+from . utils import *
 
 # Create your views here.
 
@@ -53,7 +54,7 @@ def cart(request):
 
                 item = {
                     'product':{
-                        'id': product.id,
+                        'id': product.id, 
                         'name': product.name,
                         'price': product.price,
                         'imageURL': product.imageURL,
